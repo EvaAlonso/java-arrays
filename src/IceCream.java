@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class IceCream {
     public static void main(String[] args) {
         
@@ -7,7 +10,7 @@ public class IceCream {
         /* 
             ¿Cuántas bolas de helado quieres?: 3
 
-            ¡Perfecto! Ahora escoge de que sabor quieres cada helado: 
+            ¡Perfecto! Ahora escoge de qué sabor quieres cada helado:
                 0. Chocolate
                 1. Fresa
                 2. Vainilla
@@ -17,7 +20,7 @@ public class IceCream {
                 1. Fresa
                 2. Vainilla
             
-            ¿Es correcto? presiona cualquier tecla para continuar
+            ¿Es correcto? Presiona cualquier tecla para continuar
 
             ¡Listo, tenemos tu orden! Acércate al mostrador y Robotina te entregará tu helado
         */
@@ -29,6 +32,26 @@ public class IceCream {
         //Has de usar un array para almacenar los sabores de helado y un bucle para imprimirlos.
 
         //Mira en el ejemplo los saltos de línea que has de tener.
-    
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("¿Cuántas bolas de helado quieres?: ");
+        int balls = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("¡Perfecto! Ahora escoge de qué sabor quieres cada helado: ");
+        String flavors[] = new String[balls];
+        for (int i = 0; i < balls; i++) {
+            System.out.print(i + ". ");
+            String flavor = scanner.nextLine();
+           flavors[i] = flavor;
+        }
+
+        System.out.println("¡Gracias por tu orden! Has pedido los siguientes sabores:");
+        for (int i = 0; i < balls; i++) {
+            System.out.print(i + ". " + flavors[i]);
+            System.out.println();
+
+        }
+        System.out.println("¿Es correcto? Presiona cualquier tecla para continuar");
+        scanner.nextLine();
+        System.out.println("¡Listo, tenemos tu orden! Acércate al mostrador y Robotina te entregará tu helado");
     }
 } 
